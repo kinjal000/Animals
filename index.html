@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Animal Facts</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #83a4d4, #b6fbff);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+
+        .fact-box {
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #factDisplay {
+            font-size: 1.2rem;
+            color: #34495e;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐾 Amazing Animal Facts 🐾</h1>
+        <div class="fact-box">
+            <p id="factDisplay">Click the button to learn an amazing animal fact!</p>
+        </div>
+        <button onclick="displayRandomFact()">Show Another Fact</button>
+    </div>
+
+    <script>
+        const animalFacts = [
+            "Sloths take two weeks to digest their food! 🦥",
+            "Dolphins have names for each other! 🐬",
+            "Octopuses have three hearts! 🐙",
+            "Penguins propose with pebbles! 🐧",
+            "Cows have best friends! 🐄",
+            "Goats have accents! 🐐",
+            "Elephants are the only mammals that can't jump! 🐘",
+            "Butterflies taste with their feet! 🦋",
+            "Kangaroos can't walk backwards! 🦘",
+            "Flamingos aren't naturally pink! 🦩",
+            "Hippos secrete their own sunscreen! 🦛",
+            "Honeybees can recognize human faces! 🐝",
+            "Otters hold hands while sleeping! 🦦",
+            "Giraffes have the same number of neck vertebrae as humans! 🦒",
+            "Ravens can imitate human speech! 🦅",
+            "Koalas have fingerprints similar to humans! 🐨",
+            "Hummingbirds are the only birds that can fly backwards! 🐦",
+            "Cheetahs can't roar, they meow like house cats! 🐆",
+            "Polar bears are left-handed! 🐻‍❄️",
+            "Sea horses are the only fish species where males give birth! 🐴"
+        ];
+
+        function displayRandomFact() {
+            const factDisplay = document.getElementById('factDisplay');
+            const randomIndex = Math.floor(Math.random() * animalFacts.length);
+            factDisplay.textContent = animalFacts[randomIndex];
+            
+            // Add fade effect
+            factDisplay.style.opacity = '0';
+            setTimeout(() => {
+                factDisplay.style.opacity = '1';
+            }, 50);
+        }
+
+        // Display a random fact when the page loads
+        displayRandomFact();
+    </script>
+</body>
+</html>
